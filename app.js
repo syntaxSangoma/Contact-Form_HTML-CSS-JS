@@ -188,7 +188,14 @@ if (form) {
     if (!formValid || !isRadioValid || !isCheckboxValid) {
       e.preventDefault();
     } else {
-      form.submit();
+      e.preventDefault();
+      const popup = document.querySelector(".popup-content");
+
+      popup.style.display = "block";
+
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 5000);
     }
   });
 }
