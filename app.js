@@ -187,11 +187,13 @@ if (form) {
 
     if (!formValid || !isRadioValid || !isCheckboxValid) {
       e.preventDefault();
+      submitButton.disabled = false;
     } else {
       e.preventDefault();
       const popup = document.querySelector(".popup-content");
 
       popup.style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
 
       setTimeout(() => {
         popup.style.display = "none";
