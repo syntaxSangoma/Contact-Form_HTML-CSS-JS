@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+/* || REST */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* || VARIABLES */
+:root {
+  /* COLORS */
+  --GREY-900: #2a4144;
+  --GREY-500: #86a2a5;
+  --WHITE: #ffffff;
+  --GREEN-600: #0c7d69;
+  --GREEN-200: #e0f1e8;
+  --ERROR-MESSAGE: #d73c3c;
+  --SUCCESS-MESSAGE: #0c7d69;
+
+  /* TYPOGRAPHY */
+  --FF: "Karla", sans-serif;
+
+  /* TYPOGRAPHY-SHARED */
+  --BODY-LH: 150%;
+
+  --HEADING: bold 2rem/100% var(--FF);
+  --HEADING-LS: -0.0625rem;
+  --BODY-M-BOLD: bold 1.125rem / var(--BODY-LH) var(--FF);
+  --BODY-M: normal 1.125rem / var(--BODY-LH) var(--FF);
+  --BODY-S: normal 1rem / var(--BODY-LH) var(--FF);
+}
+
+/* || UTILITY CLASSES */
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.center {
+  text-align: center;
+}
+
+.responsive-image {
+  display: none;
+}
+
+/* MOBILE FIRST DESIGN */
+/* || GENERAL STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--GREEN-200);
+  padding: 2rem 1rem;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+/* || POPUP/TOAST */
+.popup-content {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: -8px;
+  width: 327px;
+  height: 131px;
+  padding: 1.5rem;
+  background-color: var(--GREY-900);
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.popup-hidden {
+  display: none;
+}
+
+.message-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.message-title img {
+  max-width: 24px;
+}
+
+.message-title h2 {
+  font: var(--BODY-M-BOLD);
+  color: var(--WHITE);
+}
+
+.message-description {
+  font: var(--BODY-S);
+  color: var(--GREEN-200);
+}
+
+/* FORM */
+.contact-form {
+  position: relative;
+  background-color: var(--WHITE);
+  width: 343px;
+  min-height: 1074px;
+  padding: 1.5rem;
+  display: flex;
+  flex-flow: column;
+  gap: 2.5rem;
+  border-radius: 1rem;
+}
+
+.form-outer-container {
+  display: flex;
+  flex-flow: column;
+  gap: 2rem;
+}
+
+.form-title {
+  font: var(--HEADING);
+  letter-spacing: var(--HEADING-LS);
+  color: var(--GREY-900);
+}
+
+.form-inner-container {
+  display: flex;
+  flex-flow: column;
+  gap: 1.5rem;
+}
+
+.form-name-wrapper {
+  display: flex;
+  flex-flow: column;
+  gap: 1.5rem;
+}
+
+.input-wrapper {
+  width: 295px;
+}
+
+.input-title {
+  font: var(--BODY-S);
+  color: var(--GREY-900);
+  margin-bottom: 0.5rem;
+}
+
+.input-title span {
+  color: var(--GREEN-600);
+}
+
+.full-input {
+  width: 100%;
+  padding: 0.75rem 0rem 0.75rem 1.5rem;
+  border: solid 1px var(--GREY-500);
+  border-radius: 0.5rem;
+  color: var(--GREY-900);
+  font: var(--BODY-M);
+}
+
+.full-input::placeholder {
+  color: var(--GREY-500);
+}
+
+.full-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.full-input.valid {
+  color: var(--GREY-900);
+  border: solid 1px var(--GREY-500);
+}
+
+.full-input.invalid {
+  color: var(--ERROR-MESSAGE);
+  border: solid 1px var(--ERROR-MESSAGE);
+  caret-color: var(--ERROR-MESSAGE);
+}
+
+.message {
+  font: var(--BODY-S);
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.error-message {
+  color: var(--ERROR-MESSAGE);
+}
+
+.success-message {
+  color: var(--SUCCESS-MESSAGE);
+}
+
+.form-query-wrapper .message {
+  margin-top: 1rem;
+}
+
+.form-radio-group {
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.query-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 295px;
+  height: 51px;
+  border-radius: 8px;
+  border: 1px solid var(--GREY-500);
+  padding: 0.75rem 1.5rem;
+}
+
+.query-button.valid {
+  border-color: var(--GREEN-600);
+  background-color: var(--GREEN-200);
+}
+
+.query-button .label-text {
+  font: var(--BODY-M);
+  color: var(--GREY-900);
+}
+
+.custom-radio {
+  height: 20px;
+  width: 20px;
+  border: 2px solid var(--GREY-500);
+  border-radius: 50%;
+  position: relative;
+}
+
+input[type="radio"]:checked + .custom-radio::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: var(--GREEN-600);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="radio"]:checked + .custom-radio {
+  border: 2px solid var(--GREEN-600);
+}
+
+textarea {
+  width: 100%;
+  height: 240px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--GREY-500);
+  resize: none;
+  overflow-y: scroll;
+}
+
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+textarea.valid {
+  color: var(--GREY-900);
+  border: solid 1px var(--GREY-500);
+}
+
+textarea.invalid {
+  color: var(--ERROR-MESSAGE);
+  border: solid 1px var(--ERROR-MESSAGE);
+  caret-color: var(--ERROR-MESSAGE);
+}
+
+.check-wrapper {
+  display: flex;
+  flex-flow: column;
+}
+
+.check-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-text {
+  margin-left: 16px;
+  color: var(--GREY-900);
+  font: var(--BODY-S);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-label {
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border: 2px solid var(--GREY-500);
+  position: relative;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.checkbox-label.invalid {
+  border-color: var(--ERROR-MESSAGE);
+}
+
+input[type="checkbox"]:checked + .checkbox-label::after {
+  content: url("./images/icon-checkbox-check.svg");
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+input[type="checkbox"]:checked + .checkbox-label {
+  border: none;
+}
+
+.submit-button {
+  border: none;
+  padding: 0rem 2.5rem;
+  border-radius: 8px;
+  background-color: var(--GREEN-600);
+  color: var(--WHITE);
+  font: var(--BODY-M-BOLD);
+  line-height: 59px;
+}
+
+.submit-button:disabled {
+  background-color: #8c8c8c;
+}
