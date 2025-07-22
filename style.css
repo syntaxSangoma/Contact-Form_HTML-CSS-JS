@@ -156,7 +156,9 @@ h2 {
   gap: 1.5rem;
 }
 
-.input-wrapper {
+.name-wrapper,
+.email-wrapper,
+.message-wrapper {
   width: 295px;
 }
 
@@ -170,7 +172,8 @@ h2 {
   color: var(--GREEN-600);
 }
 
-.full-input {
+.email-input,
+.name-input {
   width: 100%;
   padding: 0.75rem 0rem 0.75rem 1.5rem;
   border: solid 1px var(--GREY-500);
@@ -179,21 +182,25 @@ h2 {
   font: var(--BODY-M);
 }
 
-.full-input::placeholder {
+.email-input::placeholder,
+.name-input::placeholder {
   color: var(--GREY-500);
 }
 
-.full-input:focus {
+.email-input:focus,
+.name-input:focus {
   outline: none;
   box-shadow: none;
 }
 
-.full-input.valid {
+.email-input.valid,
+.name-input.valid {
   color: var(--GREY-900);
   border: solid 1px var(--GREY-500);
 }
 
-.full-input.invalid {
+.email-input.invalid,
+.name-input.invalid {
   color: var(--ERROR-MESSAGE);
   border: solid 1px var(--ERROR-MESSAGE);
   caret-color: var(--ERROR-MESSAGE);

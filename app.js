@@ -32,7 +32,10 @@ if (form) {
 
   // Validate text/email/textarea fields
   function validateStringInput(input) {
-    const wrapper = input.closest(".input-wrapper");
+    const wrapper =
+      input.closest(".name-wrapper") ||
+      input.closest(".email-wrapper") ||
+      input.closest(".message-wrapper");
     const message = wrapper.querySelector(".message");
     const value = input.value.trim();
     let isValid = true;
